@@ -1,1 +1,66 @@
+gcc -g p1original.c;
+./a.out;
+enter the values of base,height:4
+6
+the area of the triangle with base=4.000000 and height=6.000000 is 12.000000
+gdb ./a.out;
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7d7: file p1original.c, line 16.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1original.c:16
+16  {
+(gdb) n
+18    input( &a,&b);
+(gdb) s
+input (base=0x7ffee8e4335c, height=0x7ffee8e43360) at p1original.c:4
+4     printf("enter the values of base,height:");
+(gdb) n
+5     scanf("%f""%f",base,height);
+(gdb) n
+enter the values of base,height:4
+6
+6   }
+(gdb) n
+main () at p1original.c:19
+19    find_area(a,b,&c);
+(gdb) s
+find_area (base=4, height=6, area=0x7ffee8e43364) at p1original.c:9
+9     *area=0.5*base*height;
+(gdb) n
+10  }
+(gdb) n
+main () at p1original.c:20
+20    output(a,b,c);
+(gdb) n
+21    return 0;
+(gdb) n
+22  }(gdb) p a
+$1 = 4
+(gdb) p b
+$2 = 6
+(gdb) p c
+$3 = 12
+(gdb) n
+__libc_start_main (main=0x558c676007cf <main>, argc=1, argv=0x7ffee8e43458, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffee8e43448) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) 
