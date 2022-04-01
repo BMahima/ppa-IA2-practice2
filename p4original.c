@@ -14,17 +14,17 @@ void input_array(int n,int a[n])
       scanf("%d",&a[i]);
     }
 }
-int sum_composite_numbers(int n,int a[n])
+int is_composite(int n,int a[n])
 {
-  int com=0;
+  int sum=0;
   for(int i=2;i<=n/2;i++)
     {
       if (n%i==0)
       {
-      return 1;
+        sum=sum+a[i];
       }
     }
-  return 0;
+  return sum;
 }
 
 void output(int sum)
@@ -37,7 +37,7 @@ int main()
   x=input_array_size();
   int a[x];
   input_array(x,a);
-  sum=sum_composite_numbers(x,a);
+  sum=is_composite(x,a);
   output(sum);
   return 0;
 }
