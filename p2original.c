@@ -15,7 +15,6 @@ int check_scalene(int a, int b, int c)
   else{
    return 0;
   } 
-
 }
 void output(int a,int b, int c,int isscalene)
 {

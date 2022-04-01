@@ -16,16 +16,17 @@ void input_array(int n,int a[n])
 }
 int sum_composite_numbers(int n,int a[n])
 {
-  int i;
-  for(int i=1;i<n;i++)
+  int com=0;
+  for(int i=2;i<=n/2;i++)
     {
       if (n%i==0)
       {
-      a[i]=a[i]+1;
+      return 1;
       }
     }
-  return a[i];
+  return 0;
 }
+
 void output(int sum)
 {
   printf("the sum of all the composite numbers is %d \n",sum);
